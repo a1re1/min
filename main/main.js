@@ -71,10 +71,10 @@ var appIsReady = false
 
 const isFirstInstance = app.requestSingleInstanceLock()
 
-if (!isFirstInstance) {
-  app.quit()
-  return
-}
+// if (!isFirstInstance) {
+//   app.quit()
+//   return
+// }
 
 var saveWindowBounds = function () {
   if (mainWindow) {
