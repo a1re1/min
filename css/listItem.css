@@ -2,12 +2,12 @@
   width: 100%;
   display: block;
   position: relative;
-  padding: 8px 9px 9px 9px;
+  padding: 4px 9px 4px 9px;
   cursor: pointer;
   transition: 0.2s transform, 0.2s opacity;
 }
 .searchbar-item.placeholder {
-  height: 36px;
+  height: var(--menu-height);
 }
 .searchbar-item:after {
   content: "";

@@ -335,8 +335,11 @@ app.on('ready', function () {
         })
         global.URLToOpen = null
       }
-    })
-  })
+    });
+    if (isDevelopmentMode) {
+      mainWindow.webContents.openDevTools();
+    }
+  });
 
   mainMenu = buildAppMenu()
   Menu.setApplicationMenu(mainMenu)

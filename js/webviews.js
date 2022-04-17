@@ -155,10 +155,13 @@ const webviews = {
       }
     } else {
       if (!hasSeparateTitlebar && (window.platformType === 'linux' || window.platformType === 'windows') && !windowIsMaximized && !windowIsFullscreen) {
-        var navbarHeight = 48
+        var navbarHeight = 24
       } else {
         var navbarHeight = 36
       }
+
+      let root = document.documentElement;
+      root.style.setProperty('--menu-height', navbarHeight + 'px')
 
       const viewMargins = webviews.viewMargins
       return {

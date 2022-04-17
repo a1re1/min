@@ -11,7 +11,7 @@ body {
 
 body.windows:not(.maximized):not(.fullscreen):not(.separate-titlebar),
 body.linux:not(.maximized):not(.fullscreen):not(.separate-titlebar) {
-  --control-space-top: 12px;
+  --control-space-top: var(--windows-draggable-height);
 }
 
 /* On Windows, draggable regions aren't clickable, so the drag region is a separate area above the tabstrip */
@@ -23,7 +23,7 @@ body.linux:not(.maximized):not(.fullscreen):not(.separate-titlebar):not(.disable
   top: 3px;
   left: 3px;
   width: calc(100% - 6px);
-  height: 12px;
+  height: var(--windows-draggable-height);
   -webkit-app-region: drag;
 }
 
@@ -52,7 +52,7 @@ body.rtl.mac:not(.fullscreen):not(.separate-titlebar) {
 /* Windows caption buttions */
 
 body.windows:not(.separate-titlebar) {
-  --control-space-right: 138px;
+  --control-space-right: calc(3 * (var(--menu-height) + 10px));
 }
 
 .windows-caption-buttons {
@@ -68,9 +68,11 @@ body.windows:not(.separate-titlebar) .windows-caption-buttons {
 }
 
 .windows-caption-buttons .element {
-  line-height: 36px;
-  width: 36px;
+  line-height: var(--menu-height);
+  width: var(--menu-height);
   stroke: #000;
+  color: #000;
+  font-size: var(--menu-font-size);
   padding: 0 5px;
   box-sizing: content-box;
   fill: transparent;
@@ -79,11 +81,13 @@ body.windows:not(.separate-titlebar) .windows-caption-buttons {
 
 body:not(.task-overlay-is-shown).dark-theme .windows-caption-buttons .element {
   stroke: #fff;
+  color: #fff;
+  font-size: var(--menu-font-size);
 }
 
 .windows-caption-buttons .element > svg {
-  width: 12px;
-  height: 12px;
+  width: var(--menu-font-size);
+  height: var(--menu-font-size);
 }
 
 .windows-caption-buttons .element {
@@ -129,10 +133,12 @@ body.linux:not(.separate-titlebar) #linux-control-buttons {
 
 body.task-overlay-is-shown #linux-control-buttons {
   color: black !important;
+  /* color: black !important; */
 }
 
 body.dark-mode.task-overlay-is-shown #linux-control-buttons {
   color: white !important;
+  /* color: white !important; */
 }
 
 #linux-control-buttons .button-background {

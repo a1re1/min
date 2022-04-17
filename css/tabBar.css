@@ -1,6 +1,6 @@
 #navbar {
   display: flex;
-  height: calc(36px + var(--control-space-top));
+  height: calc(var(--menu-height) + var(--control-space-top));
   transition: 0.2s background-color;
   width: 100%;
   -webkit-user-select: none;
@@ -102,8 +102,8 @@ body.linux #menu-button {
   flex: 1;
   min-width: 125px;
   transition: 0.2s transform;
-  line-height: 36px;
-  height: 36px;
+  line-height: var(--menu-height);
+  height: var(--menu-height);
   overflow: hidden;
   word-break: break-all;
   position: relative;
@@ -112,8 +112,8 @@ body.linux #menu-button {
 .tab-item.gu-mirror {
   top: var(--control-space-top) !important;
   background: rgba(255, 255, 255, 1) !important;
-  height: 32px !important;
-  line-height: 32px !important;
+  height: var(--menu-height) !important;
+  line-height: var(--menu-height) !important;
   margin-top: 2px !important;
   opacity: 0.9;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
@@ -164,8 +164,8 @@ body.linux #menu-button {
 }
 .tab-item .tab-icon:not(.permission-request-icon):hover:after {
   content: "";
-  width: 24px;
-  height: 24px;
+  width: calc(var(--menu-font-size)* 1.2);
+  height: calc(var(--menu-font-size)* 1.2);
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.075);
   position: absolute;
@@ -208,14 +208,14 @@ body.linux #menu-button {
   display: none;
 }
 .tab-item .title {
-  font-size: 15px;
+  font-size: var(--menu-font-size);
 }
 
 /* buttons */
 
 .navbar-action-button {
   padding: 0 1rem;
-  height: 36px;
+  height: var(--menu-height);
   margin-top: -0.5px;
   font-size: 1.4em !important;
 }
